@@ -1,0 +1,57 @@
+<div class="boatHeader">
+    <h2> Schedules </h2>
+</div>
+<div class="boatHeadertwo">
+    <div class="boatList">
+        <h2>Schedule List: </h2>
+    </div>
+    <div class="boatBtn"> 
+        <%= link_to "Add a Schedule", new_schedule_path, :method => "get" %>
+    </div>
+          
+</div>
+
+ 
+ 
+ 
+
+ 
+
+<div class="">
+<div>
+
+<% @schedules.each do |s| %>
+ 
+<div class="job-card">
+<table style="">
+  <tr>
+    <th>Boat Name:</th>
+    <td><%= s.boat.name %></td>  
+  </tr>
+  <tr>
+  	<th>Job:</th>
+    <td><%= s.job.description%></td> 
+  </tr>
+  <tr>
+    <th>Start Time:</th>  
+    <td><%= s.start %></td> 
+  </tr>
+  <tr>
+    <th>Finish Time: </th>
+    <td><%= s.finish%></td> 
+  </tr>
+</table>
+ 
+  <div class="boatEditDelete">
+    <div class=boatEdit>
+        <a href="/schedules/<%=s.id%>/edit"><b>Edit</b></a>
+    </div>
+    <div class=boatDelete>
+        <b><%= link_to "Delete", schedule_path(s.id), method: :delete, data: {confirm: "Delete Job Listing?"}%></b>
+    </div>
+  </div> 
+  
+</div>
+<% end %>
+
+ 

@@ -1,0 +1,39 @@
+ 
+ 
+ <div class="boatHeader">
+    <h2>Update Job #<%=@job.id%></h2>
+</div>
+
+<%= form_for @job, html: {multipart: true} do |f| %>
+ 
+<div class="job-card">
+<table style="">
+  <tr>
+    <th>Origin:</th>
+    <td><%= f.text_field :origin %></td>  
+  </tr>
+  <tr>
+  	<th>Destination:</th>
+    <td><%= f.text_field :destination %></td> 
+  </tr>
+  <tr>
+    <th>Cost:</th>  
+    <td><%= f.text_field :cost %></td> 
+  </tr>
+  <tr>
+    <th>Containers Needed: </th>
+    <td><%= f.text_field :containers %></td> 
+  </tr>
+    <tr>
+    <th>Job description: </th>
+    <td><%= f.text_field :description %></td> 
+  </tr>
+</table>
+<%= f.submit "Update Job" %>
+<% end %>
+ 
+  <div class="boatEditDelete">
+  
+  
+</div>
+ 

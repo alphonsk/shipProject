@@ -1,0 +1,55 @@
+
+
+
+<div class="boatHeader">
+    <h2> Available Boats </h2>
+</div>
+<div class="boatHeadertwo">
+    <div class="boatList">
+        <h2>Boat List: </h2>
+    </div>
+    <div class="boatBtn"> 
+        <%= link_to "Create A Boat", new_boat_path, :method => "get" %>
+    </div>
+          
+</div>
+
+
+<div class="">
+<div>
+
+
+<% @boats.each do |b| %>
+ 
+<div class="job-card">
+<table style="">
+  <tr>
+    <th>Boat Name:</th>
+    <td><%= b.name %></td>  
+  </tr>
+  <tr>
+  	<th>Location:</th>
+    <td ><%= b.location%></td> 
+  </tr>
+  <tr>
+    <td colspan="3">
+    <% if b.image.attached? %>
+        <div><%= image_tag url_for(b.image) %></div>
+    <% end %>
+    </td>
+  </tr>
+</table>
+ 
+  <div class="boatEditDelete">
+    <div class=boatEdit>
+        <a href="/boats/<%=b.id%>/edit"><b>Edit Boat</b></a>
+    </div>
+    <div class=boatDelete>
+        <b><%= link_to "Delete Boat", boat_path(b.id), method: :delete, data: {confirm: "Delete Boat?"}%></b>
+    </div>
+  </div> 
+  
+</div>
+<% end %>
+
+  

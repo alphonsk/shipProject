@@ -1,0 +1,55 @@
+<div class="boatHeader">
+    <h2> All Available Jobs </h2>
+</div>
+<div class="boatHeadertwo">
+    <div class="boatList">
+        <h2>Job List: </h2>
+    </div>
+    <div class="boatBtn"> 
+        <%= link_to "Create A Job", new_job_path, :method => "get" %>
+    </div>
+          
+</div>
+
+ 
+ 
+ 
+
+ 
+
+<div class="">
+<div>
+
+
+<% @jobs.each do |j| %>
+<div class="job-card">
+<table style="">
+  <tr>
+    <th>Job Name:</th>
+    <td><%= j.description %></td>  
+  </tr>
+  <tr>
+  	<th>Cost:</th>
+    <td><%= j.cost %></td> 
+  </tr>
+  <tr>
+    <th>Destination:</th>  
+    <td><%= j.destination%></td> 
+  </tr>
+  <tr>
+    <th>Containers Needed: </th>
+    <td><%= j.containers%></td> 
+  </tr>
+</table>
+ 
+  <div class="boatEditDelete">
+    <div class=boatEdit>
+        <a href="/jobs/<%=j.id%>/edit"><b>Edit Job</b>
+    </div>
+    <div class=boatDelete>
+        <b><%= link_to "Delete Job", job_path(j.id), method: :delete, data: {confirm: "Delete Job Listing?"}%></b>
+    </div>
+  </div> 
+  
+</div>
+<% end %>

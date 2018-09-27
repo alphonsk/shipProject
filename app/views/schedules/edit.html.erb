@@ -1,0 +1,34 @@
+ 
+ <div class="boatHeader">
+    <h2>Update Schedule # <%=@schedule.id%></h2>
+</div>
+
+<%= form_for @schedule, html: {multipart: true} do |f| %>
+ 
+<div class="job-card">
+<table style="">
+  <tr>
+    <th>Boat:</th>
+    <td>Boat:<%= f.text_field :boat_id %></td>  
+  </tr>
+  <tr>
+  	<th>Job:</th>
+    <td><%= f.text_field :job_id %></td> 
+  </tr>
+  <tr>
+    <th>Start Time:</th>  
+    <td><%= f.text_field :start %></td> 
+  </tr>
+  <tr>
+    <th>Finish Time: </th>
+    <td><%= f.text_field :finish %></td> 
+  </tr>
+</table>
+<%= f.submit "Update Schedule" %>
+<% end %>
+ 
+  <div class="boatEditDelete">
+  
+  
+</div>
+ 

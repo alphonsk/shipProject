@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ShipProject</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <style>
+
+  </style>
+
+  <body>
+  
+    <div class="mainNavbar">
+    <div class="boatN">
+      <div class="boatStf">
+        <ul class="navBtn">  
+          <li><%=link_to 'Job ', jobs_path %></li>
+          <li><%= link_to 'Boats  ', boats_path %></li>
+          <li><%= link_to 'Schedules', schedules_path %></li>
+        </ul>
+      </div>
+      <div class="userStf">
+      <ul class="navBtn"> 
+          <% if user_signed_in? %>
+            <li><%= link_to "LogOut", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to 'EditUser', edit_user_registration_path %></li> 
+          <% else %>
+            <li><%= link_to 'SignIn', new_user_session_path %></li>
+            <li><%= link_to 'SignUp', new_user_registration_path %></li>
+          <% end %>
+
+          
+      </ul>  
+      </div>
+    </div>
+  </div>
+  </header>
+    <div class="main">
+        <%= yield %>
+    </div>  
+  </body>
+</html>

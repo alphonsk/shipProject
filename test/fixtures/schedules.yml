@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  boat: one
+  job: one
+  start: 2018-09-20 13:44:27
+  finish: 2018-09-20 13:44:27
+
+two:
+  boat: two
+  job: two
+  start: 2018-09-20 13:44:27
+  finish: 2018-09-20 13:44:27

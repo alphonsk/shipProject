@@ -1,0 +1,35 @@
+ 
+
+ 
+ <div class="boatHeader">
+    <h2>Available Schedules</h2>
+</div>
+
+<%= form_for :schedule, url: {action:"create", controller:"schedules"} do |f| %>
+ 
+<div class="job-card">
+<table style="">
+  <tr>
+    <th>Boat:</th>
+    <td><%= f.select :boat_id, options_from_collection_for_select( @boats, "id", "name") %></td>  
+  </tr>
+  <tr>
+  	<th>Job:</th>
+    <td><%= f.select :job_id, options_from_collection_for_select( @jobs, "id", "description") %></td> 
+  </tr>
+  <tr>
+    <th>Start Time:</th>  
+    <td><%= f.datetime_field :start %></td> 
+  </tr>
+  <tr>
+    <th>Finish Time: </th>
+    <td><%= f.datetime_field :finish %></td> 
+  </tr>
+</table>
+ 
+ 
+<div class="sboatEdit">
+    <%= f.submit "Create Scheduled Time" %>
+  
+</div>
+<% end %> 

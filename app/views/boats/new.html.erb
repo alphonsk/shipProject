@@ -1,0 +1,34 @@
+ 
+
+<div class="boatHeader">
+    <h2>Add Your Boat</h2>
+</div>
+
+<%= form_for @boat, html: {multipart: true} do |f| %>
+ 
+<div class="job-card">
+<table style="">
+ 
+  <tr>
+  	<th>Boat name:</th>
+    <td><%= f.text_field :name %></td> 
+  </tr>
+  <tr>
+    <th>Boat location:</th>  
+    <td> <%= f.text_field :location %></td> 
+  </tr>
+  <tr>
+    <th># of containers  </th>
+    <td><%= f.text_field :max_containers %></td> 
+  </tr>
+   <tr>
+    <th>Enter boat image:  </th>
+    <td><%= f.file_field :image %></td> 
+  </tr>
+</table>
+ 
+<div class="boatEdit">
+    <%= f.submit "Create Boat" %>
+  
+</div>
+<% end %>
